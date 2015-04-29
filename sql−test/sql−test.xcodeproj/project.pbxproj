@@ -7,12 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5D5446B61AE9212300E97821 /* SqlDataRap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D5446B51AE9212300E97821 /* SqlDataRap.swift */; };
 		5DAAFCDD1AE3DBDD004E1467 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DAAFCDC1AE3DBDD004E1467 /* AppDelegate.swift */; };
 		5DAAFCDF1AE3DBDD004E1467 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DAAFCDE1AE3DBDD004E1467 /* ViewController.swift */; };
 		5DAAFCE21AE3DBDD004E1467 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5DAAFCE01AE3DBDD004E1467 /* Main.storyboard */; };
 		5DAAFCE41AE3DBDD004E1467 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5DAAFCE31AE3DBDD004E1467 /* Images.xcassets */; };
 		5DAAFCE71AE3DBDD004E1467 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5DAAFCE51AE3DBDD004E1467 /* LaunchScreen.xib */; };
 		5DAAFCF31AE3DBDD004E1467 /* sql_testTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DAAFCF21AE3DBDD004E1467 /* sql_testTests.swift */; };
+		5DD5AA961AE524DD004B3C52 /* SwiftData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DD5AA951AE524DD004B3C52 /* SwiftData.swift */; };
+		5DD5AA981AE5252D004B3C52 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DD5AA971AE5252D004B3C52 /* libsqlite3.dylib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -26,6 +29,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5D5446B51AE9212300E97821 /* SqlDataRap.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SqlDataRap.swift; sourceTree = "<group>"; };
 		5DAAFCD71AE3DBDD004E1467 /* sql−test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "sql−test.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5DAAFCDB1AE3DBDD004E1467 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5DAAFCDC1AE3DBDD004E1467 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -36,6 +40,9 @@
 		5DAAFCEC1AE3DBDD004E1467 /* sql−testTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "sql−testTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5DAAFCF11AE3DBDD004E1467 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5DAAFCF21AE3DBDD004E1467 /* sql_testTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = sql_testTests.swift; sourceTree = "<group>"; };
+		5DD5AA951AE524DD004B3C52 /* SwiftData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftData.swift; sourceTree = "<group>"; };
+		5DD5AA971AE5252D004B3C52 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
+		5DD5AA991AE5254E004B3C52 /* Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,6 +50,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5DD5AA981AE5252D004B3C52 /* libsqlite3.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -59,6 +67,9 @@
 		5DAAFCCE1AE3DBDC004E1467 = {
 			isa = PBXGroup;
 			children = (
+				5DD5AA971AE5252D004B3C52 /* libsqlite3.dylib */,
+				5DD5AA951AE524DD004B3C52 /* SwiftData.swift */,
+				5DD5AA991AE5254E004B3C52 /* Bridging-Header.h */,
 				5DAAFCD91AE3DBDD004E1467 /* sql−test */,
 				5DAAFCEF1AE3DBDD004E1467 /* sql−testTests */,
 				5DAAFCD81AE3DBDD004E1467 /* Products */,
@@ -83,6 +94,7 @@
 				5DAAFCE31AE3DBDD004E1467 /* Images.xcassets */,
 				5DAAFCE51AE3DBDD004E1467 /* LaunchScreen.xib */,
 				5DAAFCDA1AE3DBDD004E1467 /* Supporting Files */,
+				5D5446B51AE9212300E97821 /* SqlDataRap.swift */,
 			);
 			path = "sql−test";
 			sourceTree = "<group>";
@@ -212,7 +224,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5D5446B61AE9212300E97821 /* SqlDataRap.swift in Sources */,
 				5DAAFCDF1AE3DBDD004E1467 /* ViewController.swift in Sources */,
+				5DD5AA961AE524DD004B3C52 /* SwiftData.swift in Sources */,
 				5DAAFCDD1AE3DBDD004E1467 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -343,6 +357,7 @@
 				INFOPLIST_FILE = "sql−test/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Bridging-Header.h";
 			};
 			name = Debug;
 		};
@@ -353,6 +368,7 @@
 				INFOPLIST_FILE = "sql−test/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Bridging-Header.h";
 			};
 			name = Release;
 		};
@@ -409,6 +425,7 @@
 				5DAAFCF81AE3DBDD004E1467 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		5DAAFCF91AE3DBDD004E1467 /* Build configuration list for PBXNativeTarget "sql−testTests" */ = {
 			isa = XCConfigurationList;
@@ -417,6 +434,7 @@
 				5DAAFCFB1AE3DBDD004E1467 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
