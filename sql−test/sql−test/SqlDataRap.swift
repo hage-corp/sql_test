@@ -57,7 +57,7 @@ class SqlDataRap {
     // nameを受け取ってinsertするメソッド
     func Add(title_in :String) ->Bool{
         // sqlを準備
-        let sql = "INSERT INTO identify (name,　age, created_on) VALUES (?, 0, current_date)";
+        let sql = "INSERT INTO identify (name, age, created_on) VALUES (?, 0, current_date)";
         
         // ?に入る変数をバインドして実行 - 年は0歳で
         if let err = SwiftData.executeChange( sql, withArgs: [title_in]) {
@@ -97,13 +97,13 @@ class SqlDataRap {
                     var age:Int? = row["age"]?.asInt()
                     var dataStr = row["created_on"]?.asString()!
                     dateFormatter.dateFormat = "YYYY/MM/dd HH:mm:ss"
-                    var data = dateFormatter.dateFromString(dataStr!)
+                    //var data = dateFormatter.dateFromString(dataStr!)
     
                     // この下はディクショナリーで登録する場合
                     //result.append(["name":name!, "ID":String(id!)])
                     
                     // この下はNSMutableArrayで登録する場合
-                    var dic = ["ID":id!, "name":name!, "age":age!, "data":data!]
+                    var dic = ["ID":id!, "name":name!, "age":age!, /*"data":data!*/]
                     result.addObject(dic)
                 }
             }

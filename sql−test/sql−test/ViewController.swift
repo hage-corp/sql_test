@@ -101,7 +101,7 @@ class ViewController: UIViewController {
             var __age = data["age"]
             
             // データをスクロールViewに追加していく
-            var one_data = UILabel()
+            var one_data = UILabel(frame: CGRectMake(0, 0, my_width, 60))
             // 背景をオレンジ色にする.
             one_data.backgroundColor = UIColor.orangeColor()
             // 枠を丸くする.
