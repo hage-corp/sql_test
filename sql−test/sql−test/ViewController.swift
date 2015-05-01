@@ -97,8 +97,8 @@ class ViewController: UIViewController {
         var data_all = sqlModel.SelectAll()
         
         for data in data_all {
-            var __name = data["name"]
-            var __age = data["age"]
+            var __name = data["name"] as! String
+            var __age = data["age"] as! Int
             
             // データをスクロールViewに追加していく
             var one_data = UILabel(frame: CGRectMake(0, 0, my_width, 60))
