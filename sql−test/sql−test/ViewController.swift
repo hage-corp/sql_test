@@ -14,6 +14,51 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
+        makeScrollView()
+    }
+
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+
+    // ボタンが押された時の動作
+    func onClickMyButton(sender: UIButton){
+        println("onClickMyButton:")
+        println("sender.currentTitile: \(sender.currentTitle)")
+        println("sender.tag:\(sender.tag)")
+        
+        let sqlModel = SqlDataRap()
+
+        if sender.tag == 1 {
+            // 畠山家
+            sqlModel.Add("畠山家一族")
+            makeScrollView()
+        }else if sender.tag == 2 {
+            // 坂口家
+            sqlModel.Add("坂口家一族")
+            makeScrollView()
+        }else{
+            // ⭐️課題２：以下に各年齢を一歳増やしてください。
+            
+            
+            
+            
+            
+            
+            // ⭐️課題３：６１歳以上になったら死亡として、データを削除してください
+        }
+    }
+    
+    func makeScrollView(){
+        // ⭐️課題１：以下にスクロールViewをリファクタリングしてみてください
+        
+        // AddSubViewされているViewをクリアする
+        for subview in (self.view.subviews){
+            subview.removeFromSuperview()
+        }
+        
+        // ボタン他を設定
         ////////////////////////////////////
         // 操作ボタンを追加します
         ////////////////////////////////////
@@ -43,7 +88,7 @@ class ViewController: UIViewController {
         hata_btn.tag = 1
         hata_btn.addTarget(self, action: "onClickMyButton:", forControlEvents: .TouchUpInside)
         self.view.addSubview(hata_btn)
-
+        
         // 二つ目、坂口家ボタン
         var saka_btn = UIButton()
         saka_btn.frame = CGRectMake(0,0,btn_width,btn_height)
@@ -124,40 +169,8 @@ class ViewController: UIViewController {
         }
         
         baseScrollView.contentSize = CGSizeMake(my_width, CGFloat(item_cnt) * 60)
-
-        self.view.addSubview(baseScrollView)
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
-    // ボタンが押された時の動作
-    func onClickMyButton(sender: UIButton){
-        println("onClickMyButton:")
-        println("sender.currentTitile: \(sender.currentTitle)")
-        println("sender.tag:\(sender.tag)")
         
-        let sqlModel = SqlDataRap()
-
-        if sender.tag == 1 {
-            // 畠山家
-            sqlModel.Add("畠山家一族")
-            makeScrollView()
-        }else if sender.tag == 2 {
-            // 坂口家
-            sqlModel.Add("坂口家一族")
-            makeScrollView()
-        }else{
-            // ⭐️課題２：以下に各年齢を一歳増やしてください。
-            
-            // ⭐️課題３：６１歳以上になったら死亡として、データを削除してください
-        }
-    }
-    
-    func makeScrollView(){
-        // ⭐️課題１：以下にスクロールViewをリファクタリングしてみてください
+        self.view.addSubview(baseScrollView)
     }
 
 }
