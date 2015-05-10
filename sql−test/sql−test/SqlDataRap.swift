@@ -121,5 +121,25 @@ class SqlDataRap {
             return true
         }
     }
+    
+    // 各要素の年齢を一つ上げる
+    func AgingAllElements() -> Bool {
+        if let err = SD.executeChange("UPDATE identify SET age = age + 1"){
+            return false
+        }
+        else{
+            return true
+        }
+    }
+    
+    // 定年処理
+    func AgeLimit() -> Bool {
+        if let err = SD.executeChange("DELETE FROM identify WHERE age >= 61"){
+            return false
+        }
+        else{
+            return true
+        }
+    }
 }
 
