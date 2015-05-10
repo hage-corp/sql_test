@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>6B5DB398-CA9B-440B-9488-C88B11550798</string>
+	<key>IDESourceControlProjectName</key>
+	<string>sql−test</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>3AC91889C6AC076A878EF95FADE75F04B6DCECDA</key>
+		<string>https://github.com/hage-corp/sql_test.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>sql−test のコピー/sql−test.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>3AC91889C6AC076A878EF95FADE75F04B6DCECDA</key>
+		<string>../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/hage-corp/sql_test.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>3AC91889C6AC076A878EF95FADE75F04B6DCECDA</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>3AC91889C6AC076A878EF95FADE75F04B6DCECDA</string>
+			<key>IDESourceControlWCCName</key>
+			<string>Git</string>
+		</dict>
+	</array>
+</dict>
+</plist>
