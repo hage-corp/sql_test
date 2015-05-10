@@ -14,11 +14,11 @@
 		<string>https://github.com/hage-corp/sql_test.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>sql−test のコピー/sql−test.xcodeproj</string>
+	<string>sql−test/sql−test.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>3AC91889C6AC076A878EF95FADE75F04B6DCECDA</key>
-		<string>../../..</string>
+		<string>../../../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
 	<string>https://github.com/hage-corp/sql_test.git</string>
@@ -34,7 +34,15 @@
 			<key>IDESourceControlWCCIdentifierKey</key>
 			<string>3AC91889C6AC076A878EF95FADE75F04B6DCECDA</string>
 			<key>IDESourceControlWCCName</key>
-			<string>Git</string>
+			<string></string>
+		</dict>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>3AC91889C6AC076A878EF95FADE75F04B6DCECDA</string>
+			<key>IDESourceControlWCCName</key>
+			<string>hage-cope</string>
 		</dict>
 	</array>
 </dict>
