@@ -10,68 +10,26 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    // 定義値
+    // 画面サイズの取得
+    var my_width = UIScreen.mainScreen().bounds.size.width      // 横
+    var my_height = UIScreen.mainScreen().bounds.size.height     // 縦
+    // レイアウトの為のオフセット
+    var offset_top:CGFloat = 30.0
+    var offset_size:CGFloat = 3.0
+    var btn_width :CGFloat = 0         // ボタン横サイズ
+    var btn_height:CGFloat = 30.0                 // ボタン縦サイズ
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        
-        makeScrollView()
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
-    // ボタンが押された時の動作
-    func onClickMyButton(sender: UIButton){
-        println("onClickMyButton:")
-        println("sender.currentTitile: \(sender.currentTitle)")
-        println("sender.tag:\(sender.tag)")
-        
-        let sqlModel = SqlDataRap()
-
-        if sender.tag == 1 {
-            // 畠山家
-            sqlModel.Add("畠山家一族")
-            makeScrollView()
-        }else if sender.tag == 2 {
-            // 坂口家
-            sqlModel.Add("坂口家一族")
-            makeScrollView()
-        }else{
-            // ⭐️課題２：以下に各年齢を一歳増やしてください。
-            sqlModel.AgingAllElements()
-            
-            // ⭐️課題３：６１歳以上になったら死亡として、データを削除してください
-            sqlModel.AgeLimit()
-            
-            // 描画更新
-            makeScrollView()
-        }
-    }
-    
-    func makeScrollView(){
-        // ⭐️課題１：以下にスクロールViewをリファクタリングしてみてください
-        
-        // AddSubViewされているViewをクリアする
-        for subview in (self.view.subviews){
-            subview.removeFromSuperview()
-        }
         
         // ボタン他を設定
         ////////////////////////////////////
         // 操作ボタンを追加します
         ////////////////////////////////////
-        
-        // 画面サイズの取得
-        var my_width = UIScreen.mainScreen().bounds.size.width      // 横
-        var my_height = UIScreen.mainScreen().bounds.size.height     // 縦
-        // レイアウトの為のオフセット
-        var offset_top:CGFloat = 30.0
-        var offset_size:CGFloat = 3.0
-        var btn_width :CGFloat = (my_width / 3) - offset_size * 2         // ボタン横サイズ
-        var btn_height:CGFloat = 30.0                 // ボタン縦サイズ
-        
+        btn_width = (my_width / 3) - offset_size * 2
+
         ////////////////////////////////////
         // ボタンを３つ用意します
         ////////////////////////////////////
@@ -123,6 +81,67 @@ class ViewController: UIViewController {
         var objects = NSMutableArray()
         let sqlModel = SqlDataRap()
         
+        makeScrollView()
+    }
+
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+
+    // ボタンが押された時の動作
+    func onClickMyButton(sender: UIButton){
+        println("onClickMyButton:")
+        println("sender.currentTitile: \(sender.currentTitle)")
+        println("sender.tag:\(sender.tag)")
+        
+        let sqlModel = SqlDataRap()
+
+        if sender.tag == 1 {
+            // 畠山家
+            sqlModel.Add("畠山家一族")
+            makeScrollView()
+        }else if sender.tag == 2 {
+            // 坂口家
+            sqlModel.Add("坂口家一族")
+            makeScrollView()
+        }else{
+            // ⭐️課題２：以下に各年齢を一歳増やしてください。
+            sqlModel.AgingAllElements()
+            
+            // ⭐️課題３：６１歳以上になったら死亡として、データを削除してください
+            // データ抜きだし
+            var data_all = sqlModel.SelectAll()
+
+            var __name:String = ""
+            var __age:Int = 0
+            var __id:Int = 0
+            
+            for data in data_all {
+                __name = data["name"] as! String
+                __age = data["age"] as! Int
+                __id = data["ID"] as! Int
+                
+                if ( 61 <= __age ){
+                    sqlModel.delete( __id )
+                }
+            }
+            
+            // 描画更新
+            makeScrollView()
+        }
+    }
+    
+    func makeScrollView(){
+        // ⭐️課題１：以下にスクロールViewをリファクタリングしてみてください
+        
+        // AddSubViewされているViewをクリアする
+        for subview in (self.view.subviews){
+            if subview.tag == 4 {
+                subview.removeFromSuperview()
+            }
+        }
+        
         // ベースをスクロールViewとする
         var scroll_top = offset_top + btn_height + offset_size * 2
         var baseScrollView = UIScrollView(frame: CGRectMake(0, scroll_top, my_width, my_height - scroll_top))
@@ -139,6 +158,7 @@ class ViewController: UIViewController {
         var item_cnt = 0
         
         // データ抜きだし
+        let sqlModel = SqlDataRap()
         var data_all = sqlModel.SelectAll()
         
         for data in data_all {
@@ -155,6 +175,7 @@ class ViewController: UIViewController {
             one_data.layer.cornerRadius = 20.0
             // Labelに文字を代入.
             one_data.text = "\(item_cnt)  \(__name)  \(__age) "
+            
             // 文字の色を白にする.
             one_data.textColor = UIColor.whiteColor()
             // 文字の影の色をグレーにする.
@@ -169,8 +190,9 @@ class ViewController: UIViewController {
         }
         
         baseScrollView.contentSize = CGSizeMake(my_width, CGFloat(item_cnt) * 60)
-        
+        baseScrollView.tag = 4
         self.view.addSubview(baseScrollView)
+        
     }
 
 }

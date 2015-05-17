@@ -133,6 +133,7 @@ class SqlDataRap {
     }
     
     // 定年処理
+    /* 課題の趣旨と異なったため、本メソッドは封印
     func AgeLimit() -> Bool {
         if let err = SD.executeChange("DELETE FROM identify WHERE age >= 61"){
             return false
@@ -141,5 +142,6 @@ class SqlDataRap {
             return true
         }
     }
+    */
 }
 
